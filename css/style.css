@@ -1,0 +1,1110 @@
+@font-face {
+	font-family:"fata";
+	src: url("fonts/WIRE.eot?") format("eot"),url("fonts/WIRE.woff") format("woff"),url("fonts/WIRE.ttf") format("truetype"),url("fonts/WIRE.svg#") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: "Century Gothic", Calibri, Helvetica, "Lucida Sans", Verdana, Arial, sans-serif;
+	font-size: 87.5%;
+	background: #7d6e5f;
+}
+
+.fatafont {
+	font-family: fata;
+}
+
+.tr { text-align: right; }
+.tc { text-align: center; }
+.tl { text-align: left; }
+.click { cursor:pointer; }
+.hideme { display: none; }
+.interactive { color: #009; text-decoration: none; border-bottom-style: dotted; border-bottom-width: 1px; font-size: .75em; }
+.interactive:hover { text-decoration: none; border-bottom-style: solid; border-bottom-width: 1px; }
+.plus, .interactive.plus { color: #090; }
+.minus, .interactive.minus { color: #c00; }
+
+/* ### clearfix ### */
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+ 
+.clearfix {
+	display: inline-block;
+}
+ 
+html[xmlns] .clearfix {
+	display: block;
+}
+ 
+* html .clearfix {
+	height: 1%;
+}
+
+#fm-container {
+	width: 1200px;
+	margin: 0;
+	position: relative;
+	/*background: #bd9b78 url('../img/fm.png') no-repeat;
+	padding-top: 55px;*/
+}
+
+#fm-content {
+	margin: 6px;
+	position: relative;
+}
+
+h1, h2, h3 {
+	color:rgba(0,0,0,.5);
+}
+
+/* ### Honey Pot by dezi9er (kuler.adobe.com) ### */
+.hpb1 { background-color: rgb(189,73,50); }
+.hpb2 { background-color: rgb(219,158,54); }
+.hpb3 { background-color: rgb(255,211,78); }
+.hpb4 { background-color: rgb(255,250,213); }
+.hpb5 { background-color: rgb(16,91,99); }
+.hpc1 { color: rgb(189,73,50); }
+.hpc2 { color: rgb(219,158,54); }
+.hpc3 { color: rgb(255,211,78); }
+.hpc4 { color: rgb(255,250,213); }
+.hpc5 { color: rgb(16,91,99); }
+
+p.desc {
+	font-size: 10px;
+	line-height: 11px;
+	padding: 6px;
+	background: rgba(204, 153, 102, .5);
+	color: #963;
+}
+div#modeBar, div#townBar {
+	margin-bottom: 12px;
+	border-bottom: 2px solid #5D4E3F;
+	background: #6D5E4F;
+	color: #333;
+}
+div#modeBar {
+	margin-bottom: 0;
+}
+#modeBar div.mode-switch, #modeBar div.help-switch { 
+	float: left; 
+	margin: 6px;
+	padding: 3px 6px;
+	background: transparent;
+	border-radius: 6px;
+	border: 1px dotted rgba(255, 255, 255, .5);
+	color: #fff;
+}
+#modeBar div.mode-switch:hover, #modeBar div.help-switch:hover { 
+	background: rgba(255, 255, 255, .25);
+	border: 1px dotted rgba(255, 255, 255, .5);
+	color: #333;
+}
+#modeBar div.mode-switch.active-mode, #modeBar div.mode-switch.active-mode:hover, #modeBar div.help-switch.active, #modeBar div.help-switch.active:hover { 
+	background: rgba(255, 255, 255, .5);
+	border: 1px solid rgba(255, 255, 255, .5);
+	color: #333;
+}
+#modeBar p {
+	margin: 6px 50px 0;
+}
+#modeBar p a {
+	color: #336;
+	text-decoration: none;
+	border-bottom: 1px dotted #336;
+}
+#townBar h2 #townDay { float: right; margin-right: 20px; }
+#townBar h2 #townName { margin: 0 20px; }
+#townBar h2 #townID { font-size: .5em; font-weight: normal; margin-right: 50px; }
+#townBar h2 #townSpy a, #townBar h2 #townHistory a { font-size: .625em; font-weight: normal; color: #ccc; text-decoration: none; }
+#townBar h2 #townHistory { font-size: .625em; font-weight: normal; color: #ccf; text-decoration: none; margin-left: 2em; }
+#townBar h2 #townHistory a { padding: 0 .5em; font-size: 1em; }
+#townBar h2 #townSpy a:hover, #townBar h2 #townHistory a:hover { color: #fff; text-shadow: 1px 1px 1px rgba(0,0,0,.5); }
+
+div#map-wrapper {
+	position: relative;
+	float: left;
+}
+div#ruinmap-wrapper {
+  background: none repeat scroll 0 0 #7D6E5F;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  z-index: 5;
+}
+div#ruinmap-wrapper-close {
+  background: none repeat scroll 0 0 rgba(0,0,0,.5);
+  cursor: pointer;
+  height: 24px;
+  position: absolute;
+  left: 600px;
+  width: 96px;
+	border-radius: 12px;
+	color: #ccc;
+	font-weight: bold;
+	text-align: center;
+	line-height: 24px;
+}
+div#ruinmap-wrapper-close:hover {
+  background: none repeat scroll 0 0 rgba(255,0,0,.5);
+	color: #fff;
+}
+div#ruinComment-save {
+  background: none repeat scroll 0 0 rgba(0,0,0,.5);
+  cursor: pointer;
+  height: 24px;
+  width: 96px;
+	border-radius: 12px;
+	color: #ccc;
+	font-weight: bold;
+	text-align: center;
+	line-height: 24px;
+}
+div#ruinComment-save:hover {
+  background: none repeat scroll 0 0 rgba(0,255,0,.5);
+	color: #fff;
+}
+div#ruinHoverInfo {
+	clear: left;
+	height: 48px;
+	border: 1px solid #CCC;
+	margin-right: 14px;
+	margin-bottom: 14px;
+	margin-top: 28px;
+	border-radius: 13px;
+	text-align: center;
+	line-height: 24px;
+	font-size: .875em;
+	padding: 0 13px;
+}
+div#ruinHoverInfo.hovering {
+	border-color: #ffc;
+}
+div#map {
+	float: left;
+}
+ul.maprow {
+	clear: left;
+}
+li.mapzone, li.mapruler, li.mapcorner {
+	height: 30px;
+	width: 30px;
+	border: 1px solid rgba(0,0,0,.2);
+	float: left;
+	list-style-type: none;
+	position: relative;
+}
+li.mapzone { 
+	background-image: url('img/mapzone30_5plus.png'); 
+	background-repeat: no-repeat;
+	background-position: -1px -1px;
+	width: 28px;
+	height: 28px;
+	border-width: 2px;
+	border-color: rgba(0,0,0,.0);
+	background-color: #475613;
+}
+li.mapzone.nvt { 
+	background-image: url('img/mapzone30_5plus.png'), url('img/nvttr.png'); 
+	background-repeat: no-repeat, no-repeat;
+	background-position: -1px -1px, -1px -1px;
+}
+li.mapzone.nyv { 
+	background-image: url('img/mapzone30_5plus.png'), url('img/nyvtr.png'); 
+	background-repeat: no-repeat, no-repeat;
+	background-position: -1px -1px, -1px -1px;
+}
+li.mapzone.city { 
+	background-image: url('img/city.png'), url('img/mapzone30_5plus.png');
+	background-repeat: no-repeat, no-repeat;
+	background-position: 50% 50%, -1px -1px; 
+}
+li.mapzone.highlight { 
+	border-top-color: #F6F;
+	border-left-color: #F6F;
+	border-right-color: #C3C;
+	border-bottom-color: #C3C;
+}
+li.mapzone.highlightRoute { 
+	border-top-color: #FF6;
+	border-left-color: #FF6;
+	border-right-color: #CC3;
+	border-bottom-color: #CC3;
+	-webkit-transform: rotate(360deg); 
+	-moz-transform: rotate(360deg);	
+	-o-transform: rotate(360deg);	
+	transform: rotate(360deg);
+	-moz-transition: all 0.25s ease; 
+	-o-transition: all 0.25s ease; 
+	-webkit-transition: all 0.25s ease; 
+	transition: all 0.25s ease;
+}
+
+li.mapzone:hover {
+	border-color: #ff0;
+}
+li.mapzone.selectedZone, li.mapruler.selectedZone {
+	border-color: #f00;
+}
+li.mapruler.selectedZone {
+	background: #933;
+	color: #fff;
+}
+li.mapzone.highlightRoute div.route-counter {
+	position: absolute;
+	top: 6px;
+	left: 6px;
+	width: 16px;
+	height: 16px;
+	border-radius: 8px;
+	background: #ff0;
+	text-align: center;
+	z-index: 120;
+	font-size: 11px;
+}
+li.mapzone.highlightRoute div.route-counter.route-counter-multi {
+	position: absolute;
+	top: 6px;
+	left: 1px;
+	width: 26px;
+	height: 16px;
+	border-radius: 8px;
+	background: #ff0;
+	text-align: center;
+	z-index: 120;
+	font-size: 9px;
+}
+
+li.mapruler {
+	line-height: 30px;
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+	font-weight: bold;
+	background: #aaa;
+	color: #000;
+}
+li.mapruler.hoverzone {
+	background: #333;
+	color: #ccc;
+}
+li.mapcorner {
+	background-color: rgba(0,0,0,.2);
+}
+ul.maprulebar-top li.mapcorner.first { border-radius: 32px 0 0 0; border-color: transparent rgba(0,0,0,.2) rgba(0,0,0,.2) transparent; }
+ul.maprulebar-top li.mapcorner.last { border-radius: 0 32px 0 0; border-color: transparent transparent rgba(0,0,0,.2) rgba(0,0,0,.2); }
+ul.maprulebar-bottom li.mapcorner.first { border-radius: 0 0 0 32px; border-color: rgba(0,0,0,.2) rgba(0,0,0,.2) transparent transparent; }
+ul.maprulebar-bottom li.mapcorner.last { border-radius: 0 0 32px 0; border-color: rgba(0,0,0,.2) transparent transparent rgba(0,0,0,.2); }
+
+li.mapzone.danger0 { background-color: #475613; }
+li.mapzone.danger1 { background-color: #8F990B; }
+li.mapzone.danger2 { background-color: #8F7324; }
+li.mapzone.danger3 { background-color: #8F340B; }
+li.mapzone.danger4 { background-color: #52626d; }
+
+li.lostsoul div.lostsoul {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: url('img/lostsoul.gif');
+  z-index: 1;
+  pointer-events: none;
+  bottom: -15px;
+  right: -15px;
+}
+
+#ruinmap li.mapzone { 
+	background-color: #7E4D2A;
+	border: none;
+	width: 32px;
+	height: 32px;
+	background-image: url('img/mapzone32_5plus.png'); 
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	
+}
+#ruinmap li.mapzone:hover {
+	box-shadow: inset 0px 0px 10px #f00;
+}
+#ruinmap li.mapzone.selectedZone {
+	box-shadow: inset 0px 0px 5px #ff0;
+}
+#ruinmap li.mapzone.with-comment {
+	background-color: #AE7D5A;
+}
+
+#ruinmap li.mapzone.tile-0, .ruinTile.tile-0 { background-image: url('img/tile0.png'); }
+#ruinmap li.mapzone.tile-1, .ruinTile.tile-1 { background-image: url('img/tile1.png'); }
+#ruinmap li.mapzone.tile-2, .ruinTile.tile-2 { background-image: url('img/tile2.png'); }
+#ruinmap li.mapzone.tile-3, .ruinTile.tile-3 { background-image: url('img/tile3.png'); }
+#ruinmap li.mapzone.tile-4, .ruinTile.tile-4 { background-image: url('img/tile4.png'); }
+#ruinmap li.mapzone.tile-5, .ruinTile.tile-5 { background-image: url('img/tile5.png'); }
+#ruinmap li.mapzone.tile-6, .ruinTile.tile-6 { background-image: url('img/tile6.png'); }
+#ruinmap li.mapzone.tile-7, .ruinTile.tile-7 { background-image: url('img/tile7.png'); }
+#ruinmap li.mapzone.tile-8, .ruinTile.tile-8 { background-image: url('img/tile8.png'); }
+#ruinmap li.mapzone.tile-9, .ruinTile.tile-9 { background-image: url('img/tile9.png'); }
+#ruinmap li.mapzone.tile-10, .ruinTile.tile-10 { background-image: url('img/tile10.png'); }
+#ruinmap li.mapzone.tile-11, .ruinTile.tile-11 { background-image: url('img/tile11.png'); }
+#ruinmap li.mapzone.tile-12, .ruinTile.tile-12 { background-image: url('img/tile12.png'); }
+#ruinmap li.mapzone.tile-13, .ruinTile.tile-13 { background-image: url('img/tile13.png'); }
+#ruinmap li.mapzone.tile-14, .ruinTile.tile-14 { background-image: url('img/tile14.png'); }
+#ruinmap li.mapzone.tile-15, .ruinTile.tile-15 { background-image: url('img/tile15.png'); }
+#ruinmap li.mapzone.ruinFirstRow { background-color: #999; }
+#ruinmap li.mapzone.ruinEntry { background-color: #090; background-image: url('img/tileE.png'); }
+
+#ruinmap li.mapzone.door-1,
+#ruinmap li.mapzone.door-2,
+#ruinmap li.mapzone.door-3 { position: relative; }
+#ruinmap li.mapzone.door-1:after,
+#ruinmap li.mapzone.door-2:after,
+#ruinmap li.mapzone.door-3:after {
+	content: " ";
+	background-image: url('img/door1.png');
+	width: 32px;
+	height: 32px;
+	display: block;
+	position: absolute;
+	z-index: 2;
+}
+#ruinmap li.mapzone.door-2:after { background-image: url('img/door2.png'); }
+#ruinmap li.mapzone.door-3:after { background-image: url('img/door3.png'); }
+
+.ruinDoor.door-1 { background-image: url('img/door1.png'); }
+.ruinDoor.door-2 { background-image: url('img/door2.png'); }
+.ruinDoor.door-3 { background-image: url('img/door3.png'); }
+
+#ruinmap li.mapzone.lock-1,
+#ruinmap li.mapzone.lock-2,
+#ruinmap li.mapzone.lock-3 { position: relative; }
+#ruinmap li.mapzone.lock-1:after,
+#ruinmap li.mapzone.lock-2:after,
+#ruinmap li.mapzone.lock-3:after {
+	content: " ";
+	background-image: url('img/lock1.gif');
+	width: 32px;
+	height: 32px;
+	display: block;
+	position: absolute;
+	z-index: 2;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+}
+#ruinmap li.mapzone.lock-2:after { background-image: url('img/lock2.gif'); }
+#ruinmap li.mapzone.lock-3:after { background-image: url('img/lock3.gif'); }
+
+.ruinLock.lock-1 { background-image: url('img/lock1.gif'); }
+.ruinLock.lock-2 { background-image: url('img/lock2.gif'); }
+.ruinLock.lock-3 { background-image: url('img/lock3.gif'); }
+.ruinLock { background-position: 50% 50%; 	background-repeat: no-repeat; }
+
+
+#ruinmap li.mapzone.doorlock-1,
+#ruinmap li.mapzone.doorlock-2,
+#ruinmap li.mapzone.doorlock-3,
+#ruinmap li.mapzone.doorlock-4,
+#ruinmap li.mapzone.doorlock-5 { position: relative; }
+#ruinmap li.mapzone.doorlock-1:after,
+#ruinmap li.mapzone.doorlock-2:after,
+#ruinmap li.mapzone.doorlock-3:after,
+#ruinmap li.mapzone.doorlock-4:after,
+#ruinmap li.mapzone.doorlock-5:after {
+  content: " ";
+  background-image: url('img/doorlock1.png');
+  width: 32px;
+  height: 32px;
+  display: block;
+  position: absolute;
+  z-index: 2;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+#ruinmap li.mapzone.doorlock-2:after { background-image: url('img/doorlock2.png'); }
+#ruinmap li.mapzone.doorlock-3:after { background-image: url('img/doorlock3.gif'); }
+#ruinmap li.mapzone.doorlock-4:after { background-image: url('img/doorlock4.gif'); }
+#ruinmap li.mapzone.doorlock-5:after { background-image: url('img/doorlock5.gif'); }
+
+.ruinDoorLock.doorlock-1 { background-image: url('img/doorlock1.png'); }
+.ruinDoorLock.doorlock-2 { background-image: url('img/doorlock2.png'); }
+.ruinDoorLock.doorlock-3 { background-image: url('img/doorlock3.gif'); clear: left; }
+.ruinDoorLock.doorlock-4 { background-image: url('img/doorlock4.gif'); }
+.ruinDoorLock.doorlock-5 { background-image: url('img/doorlock5.gif'); }
+.ruinDoorLock { background-position: 50% 50%;   background-repeat: no-repeat; }
+
+#ruinmap li.mapzone.zombie-1,
+#ruinmap li.mapzone.zombie-2,
+#ruinmap li.mapzone.zombie-3,
+#ruinmap li.mapzone.zombie-4 { position: relative; }
+#ruinmap li.mapzone.zombie-1:before,
+#ruinmap li.mapzone.zombie-2:before,
+#ruinmap li.mapzone.zombie-3:before,
+#ruinmap li.mapzone.zombie-4:before {
+	content: " ";
+	background-image: url('img/zombie1.png');
+	width: 32px;
+	height: 32px;
+	display: block;
+	position: absolute;
+	z-index: 3;
+}
+#ruinmap li.mapzone.zombie-2:before { background-image: url('img/zombie2.png'); }
+#ruinmap li.mapzone.zombie-3:before { background-image: url('img/zombie3.png'); }
+#ruinmap li.mapzone.zombie-4:before { background-image: url('img/zombie4.png'); }
+
+.ruinZombie.zombie-0 { background-image: url('img/zombie0.png'); }
+.ruinZombie.zombie-1 { background-image: url('img/zombie1.png'); }
+.ruinZombie.zombie-2 { background-image: url('img/zombie2.png'); }
+.ruinZombie.zombie-3 { background-image: url('img/zombie3.png'); }
+.ruinZombie.zombie-4 { background-image: url('img/zombie4.png'); }
+
+.ruinTile, .ruinDoor, .ruinZombie, .ruinLock, .ruinDoorLock {
+  width: 30px;
+  height: 30px;
+  float: left;
+  margin: 0 10px 10px 0;
+  border: 1px solid rgba(0,0,0,.5);
+  background-color: #7E4D2A;
+}
+.ruinTile:hover, .ruinDoorLock:hover, .ruinDoor:hover, .ruinZombie:hover {
+  border-color: #ff0;
+}
+#ruinInfoBox {
+  left: 500px;
+  padding: 14px 0 0 14px;
+  position: absolute;
+  width: 182px;
+  background: rgba(0,0,0,.5);
+  border-radius: 14px;
+  color: #fff;
+	top: 28px;
+}
+#ruinInfoBox2 {
+  left: 700px;
+  padding: 14px 0 0 14px;
+  position: absolute;
+  width: 182px;
+  background: rgba(0,0,0,.5);
+  border-radius: 14px;
+  color: #fff;
+	top: 28px;
+}
+#ruinName { color: #fff; }
+#ruinCoords { display: none; }
+#ruinComment {
+	color: white;
+	background: transparent;
+	border-radius: 12px;
+	width: 153px;
+	height: 170px;
+	padding: 6px;
+	font-family: "Century Gothic", Calibri, Helvetica, "Lucida Sans", Verdana, Arial, sans-serif;
+}
+
+.citizen, .zombies {
+	height: 30px;
+	width: 30px;
+	position: absolute;
+}
+.building {
+	height: 18px;
+	width: 18px;
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	background: rgba(255,255,255,.5);
+}
+.possible-building {
+	height: 18px;
+	width: 18px;
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	border-radius: 9px;
+	background: rgba(255,204,255,.5) url('img/pb.png') no-repeat 50% 50%;
+	
+}
+.depleted-building {
+	background: rgba(255,0,0,.5);
+}
+.building-blueprint {
+	background-image: url('img/bp.png');
+	background-repeat: no-repeat;
+	background-position: 1px 7px;
+}
+.explorable-building {
+  background-image: url('http://www.dieverdammten.de/img/icons/r_ruine.gif');
+  background-repeat: no-repeat;
+  background-position: 1px 1px;
+}
+.zone-status-img {
+	position: absolute;
+	right: 0;
+	top: 14px;
+	width: 12px;
+}
+.zone-updated {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 9px;
+	height: 9px;
+	z-index: 4;
+}
+.zone-updated-today {
+	background: transparent url('img/uptodate.png') no-repeat;
+}
+.zone-updated-yesterday {
+	background: transparent url('img/uptoyesterdate.png') no-repeat;
+}
+.zone-updated-b4yesterday {
+	background: transparent url('img/uptob4yesterdate.png') no-repeat;
+}
+.zone-updated-longago {
+	background: transparent url('img/uptolongago.png') no-repeat;
+}
+
+h1 {
+	text-align: right;
+	font-size: 30px;
+	float: right;
+	margin: 3px 12px;
+	color: #cccfcc;
+}
+h5 {
+	text-align: left;
+	color: rgba(0,0,0,.5);
+	width: 110px;
+	float:right;
+	font-weight: normal;
+	line-height: 14px;
+	margin: 3px;
+	color: #ccc;
+}
+h5 #owner-name {
+	color: #0c0;
+}
+
+div#box, div#tools {
+	float: right;
+	width: 240px;
+	min-height: 250px;
+	position: relative;
+}
+div#box-protection, div#tools-protection {
+	background: rgba(0, 0, 0, .5) url('img/ajax5.gif') 50% 50% no-repeat;
+	position: absolute;
+	z-index: 12;
+}
+div#box-content, div#tools-content {
+	margin: 0;
+}
+ul#box-tabs, ul#tools-tabs {
+	list-style-type: none;
+	padding-left: 3px;
+}
+
+#tab-zone-info, #tab-tools-colors { background: transparent url('http://data.dieverdammten.de/gfx/icons/item_map.gif') 50% 50% no-repeat; }
+#tab-item-info { background: transparent url('img/search.png') 50% 50% no-repeat; }
+#tab-bank-info { background: transparent url('http://data.dieverdammten.de/gfx/icons/item_chest_citizen.gif') 50% 50% no-repeat; }
+#tab-town-info { background: transparent url('http://data.dieverdammten.de/gfx/icons/small_home.gif') 50% 50% no-repeat; }
+#tab-storms { background: transparent url('img/storm.gif') 50% 50% no-repeat; }
+#tab-ruins { background: transparent url('http://data.dieverdammten.de/gfx/icons/tag_11.gif') 50% 50% no-repeat; }
+#tab-citizens { background: transparent url('http://www.dieverdammten.de/gfx/forum/smiley/h_human.gif') 50% 50% no-repeat; }
+#tab-expeditions, #tab-tools-planner { background: transparent url('img/expeditions.gif') 50% 50% no-repeat; }
+#tab-options, #tab-tools-options { background: transparent url('img/options.gif') 50% 50% no-repeat; }
+
+ul#box-tabs li, ul#tools-tabs li {
+	list-style-type: none;
+	float: left;
+	padding: 1px 3px;
+	text-align: center;
+	height: 20px;
+	background-color: rgba(201, 201, 201, .5);
+	border: 1px solid rgba(201, 201, 255, .5);;
+	margin: 1px 1px 3px;
+	color: #333;
+	width: 16px;
+}
+ul#box-tabs li.active, ul#tools-tabs li.active {
+	height: 24px;
+	border-bottom: none;
+	margin-bottom: 0;
+	background-color: rgba(255, 255, 255, .5);
+	color: #009;
+}
+
+div.box-tab-content, div.tools-tab-content {
+	background: rgba(255,255,255,.5);
+	padding: 6px;
+	min-height: 200px;
+}
+div#zone-info p {
+	margin-bottom: 6px;
+}
+div#zone-info p.zone-zombies-scout {
+	font-size: 0.875em;
+	margin-top: -6px;
+	color: #666;
+}
+div.zone-items {
+	margin-top: 6px;
+}
+div.zone-item[state="1"] {
+	background: #AF542B;
+	color: #2B304F;
+}
+div.zone-item {
+	width: 40px;
+	height: 12px;
+	font-weight: bold;
+	font-size: 12px;
+	color: #AFB3CF;
+	float: left;
+	text-align: right;
+	position: relative;
+	background: #5C2B20;
+	border: 1px solid #B37C4A;
+	margin: 0 2px 2px 0;
+	padding: 4px;
+	line-height: 12px;
+	font-style: italic;
+}
+div.zone-item img {
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	height: 16px;
+	width: 16px;
+}
+div.zone-item.broken img {
+	position: absolute;
+	top: 1px;
+	left: 1px;
+	height: 16px;
+	width: 16px;
+	border: 1px dotted #f00;
+}
+div.zone-item.defense img {
+	position: absolute;
+	top: 1px;
+	left: 1px;
+	height: 16px;
+	width: 16px;
+	border: 1px dotted #fc0;
+}
+p.zone-lastupdate {
+	font-size: .75em;
+}
+
+div#item-selector, div#building-selector {
+	position: absolute;
+	background: rgba(125, 110, 95, .95); /* #7d6e5f */
+	padding: 12px;
+	border-radius: 12px;
+	width: 384px;
+	z-index: 6;
+	top: 48px;
+	left: 540px;
+	border: 2px solid #333;
+}
+div#building-selector {
+	width: 600px;
+	left: 320px;
+}
+div.select-item {
+	width: 12px;
+	height: 12px;
+	float: left;
+	position: relative;
+	background: #5C2B20;
+	border: 1px solid #B37C4A;
+	margin: 0 2px 2px 0;
+	padding: 4px;
+}
+div.select-item img {
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	height: 16px;
+	width: 16px;
+}
+div.select-item.broken img {
+	position: absolute;
+	top: 1px;
+	left: 1px;
+	height: 16px;
+	width: 16px;
+	border: 1px dotted #f00;
+}
+div.select-item.defense img {
+	position: absolute;
+	top: 1px;
+	left: 1px;
+	height: 16px;
+	width: 16px;
+	border: 1px dotted #fc0;
+}
+div.select-building {
+	width: 30%;
+	height: 12px;
+	float: left;
+	position: relative;
+	background: #5C2B20;
+	border: 1px solid #B37C4A;
+	margin: 0 2px 2px 0;
+	padding: 3px 6px;
+	font-size: .75em;
+	color: white;
+	line-height: 12px;
+}
+
+li.mapzone.highlight-border-n { border-top-color: #0ff; }
+li.mapzone.highlight-border-e { border-right-color: #0ff; }
+li.mapzone.highlight-border-s { border-bottom-color: #0ff; }
+li.mapzone.highlight-border-w { border-left-color: #0ff; }
+
+li.mapzone.geodir.gd-NE,
+li.mapzone.geodir.gd-NW,
+li.mapzone.geodir.gd-SE,
+li.mapzone.geodir.gd-SW {
+	background-color: rgba(255, 0, 0, .2);
+}
+li.mapzone.geodir.gd-N,
+li.mapzone.geodir.gd-W,
+li.mapzone.geodir.gd-E,
+li.mapzone.geodir.gd-S {
+	background-color: rgba(0, 102, 255, .2);
+}
+
+.options-section {
+	padding-bottom: 3px;
+	border-bottom: 1px solid #999;
+	margin-bottom: 6px;
+}
+.farbtastic { margin: 0 auto; }
+.radius-delete {
+	background: rgba(0,0,0,.2);
+	margin: 3px;
+}
+.radius-color-example {
+	float: left;
+	width: 9px;
+	height: 9px;
+	border: 2px solid #ccc;
+	margin: 3px 6px 0 3px;
+}
+.radius-delete span {
+	float: right;
+	font-size: .625em;
+	display: none;
+	margin: 3px 3px 0 0;
+	color: #900;
+}
+.radius-delete:hover span {
+	display: block;
+}
+.options-display-option, .options-display-switch {
+	border: 1px solid #B37C4A;
+	padding: 1px 3px;
+	font-size: .875em;
+	margin: 3px 0;
+}
+.options-display-option.active-option, .options-display-switch.active-option {
+	background: #AF542B;
+	color: #2B304F;
+}
+.exp-item {
+	border: 1px solid #B37C4A;
+	padding: 1px 3px;
+	font-size: .875em;
+	margin: 3px 0;
+	list-style-type: none;
+}
+.exp-item.active-option {
+	background: #AF542B;
+	color: #2B304F;
+}
+
+#footer {
+	margin-top: 12px;
+	font-size: 11px;
+	border-top: 2px solid #5D4E3F;
+	background: #6D5E4F;
+	color: #333;
+	padding-bottom: 12px;
+}
+#footer p {
+	margin: 6px 50px 0;
+}
+#footer p a {
+	color: #336;
+	text-decoration: none;
+	border-bottom: 1px dotted #336;
+}
+
+#map-hover {
+	display: none;
+	position: absolute;
+	width: 300px;
+	z-index: 5;
+	background: rgba(0,0,0,.5);
+	border-radius: 12px;
+}
+#map-hover-content {
+	background: rgba(109,94,79,.875);
+	margin: 5px;
+	border: 1px solid #666;
+	border-radius: 6px;
+}
+#map-hover-content > div {
+	margin: 6px;
+	
+}
+
+span.zone-citizen {
+	font-style: italic;
+	font-weight: bold;
+	padding: 1px 3px 1px 19px;
+	border-radius: 3px;
+	margin: 0 2px 2px 0;
+}
+span.zone-citizen-collec {
+	color: #AFB3CF;
+	background: rgba(0, 0, 0, .5) url('http://data.dieverdammten.de/gfx/icons/item_pelle.gif') no-repeat 1px 1px;
+}
+span.zone-citizen-guardian {
+	color: #AFB3CF;
+	background: rgba(0, 0, 0, .5) url('http://data.dieverdammten.de/gfx/icons/item_shield.gif') no-repeat 1px 1px;
+}
+span.zone-citizen-eclair {
+	color: #AFB3CF;
+	background: rgba(0, 0, 0, .5) url('http://data.dieverdammten.de/gfx/icons/item_vest_on.gif') no-repeat 1px 1px;
+}
+span.zone-citizen-hunter {
+	color: #AFB3CF;
+	background: rgba(0, 0, 0, .5) url('http://data.dieverdammten.de/gfx/icons/item_surv_book.gif') no-repeat 1px 1px;
+}
+span.zone-citizen-tamer {
+	color: #AFB3CF;
+	background: rgba(0, 0, 0, .5) url('http://data.dieverdammten.de/gfx/icons/item_tamed_pet.gif') no-repeat 1px 1px;
+}
+span.zone-citizen-tech {
+	color: #AFB3CF;
+	background: rgba(0, 0, 0, .5) url('http://data.dieverdammten.de/gfx/icons/item_keymol.gif') no-repeat 1px 1px;
+}
+span.zone-citizen-shaman {
+	color: #AFB3CF;
+	background: rgba(0, 0, 0, .5) url('http://data.dieverdammten.de/gfx/icons/item_shaman.gif') no-repeat 1px 1px;
+}
+span.zone-citizen-basic {
+	color: #ccc;
+	background: rgba(0, 0, 0, .5) url('http://data.dieverdammten.de/gfx/icons/item_basic_suit.gif') no-repeat 1px 1px;
+}
+
+.zombie-count-change {
+	font-weight: bold;
+	font-family: Arial;
+	cursor: pointer;
+}
+
+#userInfoBox {
+	position: absolute;
+	top: 32px;
+	right: 64px;
+	z-index: 30;
+}
+.ajaxInfo {
+	background: none repeat scroll 0 0 rgba(0,0,51,.5);
+	border-radius: 0 0 6px 6px;
+	color: #ccc;
+	font-weight: bold;
+	margin: 0;
+	padding: 8px 12px 8px;
+	height: 14px;
+	line-height: 14px;
+}
+
+.storm-list {
+	list-style-type: none;
+}
+
+.hideme, .clearfix.hideme, html[xmlns] .clearfix.hideme { display: none; }
+
+#help-section {
+	top: 48px;
+	left: 48px;
+	position: absolute;
+	z-index: 1002;
+	width: 800px;
+	padding: 12px;
+	background: rgba(0,0,51,.7);
+	border-radius: 12px;
+	color: #eee;
+}
+#help-section h2 {
+	color: #ddd;
+}
+#help-section.hidefaq {
+	display: none;
+}
+#help-section.showfaq {
+	display: block;
+}
+#help-section ul {
+	list-style-type: none;
+}
+#help-section ul li h4 {
+	cursor: pointer;
+}
+#help-section ul li p, #help-section ul li ul {
+	display: none;
+}
+#help-section ul li.active p, #help-section ul li.active ul {
+	display: block;
+}
+
+#login_form a {
+	color: #336;
+	text-decoration: none;
+	background: transparent url('http://data.dieverdammten.de/gfx/loc/de/105x39.gif') no-repeat left top;
+	padding: 0 0 0 110px;
+	line-height: 39px;
+	display: block;
+	float: left;
+}
+
+abbr {
+	cursor: help;
+	border-bottom: 1px dotted #00c;
+	color: #00c;
+}
+
+@-webkit-keyframes pulsate {
+  0% { box-shadow: 0 0 100px 1px #ff0; }
+  5% { box-shadow: 0 0 30px 2px #ff0; }
+  10% { box-shadow: 0 0 10px 1px #ff0; }
+  15% { box-shadow: 0 0 30px 2px #ff0; }
+  20% { box-shadow: 0 0 10px 1px #ff0; }
+  25% { box-shadow: 0 0 30px 2px #ff0; }
+  30% { box-shadow: 0 0 10px 1px #ff0; }
+  35% { box-shadow: 0 0 30px 2px #ff0; }
+  40% { box-shadow: 0 0 10px 1px #ff0; }
+  45% { box-shadow: 0 0 30px 2px #ff0; }
+  50% { box-shadow: 0 0 10px 1px #ff0; }
+  55% { box-shadow: 0 0 30px 2px #ff0; }
+  60% { box-shadow: 0 0 10px 1px #ff0; }
+	65% { box-shadow: 0 0 30px 2px #ff0; }
+  70% { box-shadow: 0 0 10px 1px #ff0; }
+  75% { box-shadow: 0 0 30px 2px #ff0; }
+  80% { box-shadow: 0 0 10px 1px #ff0; }
+  85% { box-shadow: 0 0 30px 2px #ff0; }
+  90% { box-shadow: 0 0 10px 1px #ff0; }
+  100% { box-shadow: 0 0 30px 2px #ff0; }
+}
+ 
+li.mapzone.highlightSpecial {
+  -webkit-animation-name: pulsate;
+  -webkit-animation-duration: 12s;
+  -webkit-animation-timing-function: linear;
+	z-index: 100;
+}
+li.mapzone.highlightSpecial { 
+	border-top-color: #FF6;
+	border-left-color: #FF6;
+	border-right-color: #CC3;
+	border-bottom-color: #CC3;
+	z-index: 100;
+	box-shadow: 0 0 10px 1px #f0f, 0 0 5px 0 #0ff;
+	-webkit-transform: rotate(360deg); 
+	-moz-transform: rotate(360deg);	
+	-o-transform: rotate(360deg);	
+	transform: rotate(360deg);
+	-moz-transition: all 0.25s ease; 
+	-o-transition: all 0.25s ease; 
+	-webkit-transition: all 0.25s ease; 
+	transition: all 0.25s ease;
+}
+td.pos-stat {
+	vertical-align: middle;
+	font-size: 10px;
+	font-family: monospace;
+	line-height: 10px;
+	text-align: center;
+}
+td.ruin-regen {
+	background: rgba(0,204,0,.5);
+}
+td.ruin-empty {
+	background: rgba(204,0,0,.5);
+}
+
+table.cad-table { width: 100%; }
+tr.cad-day { background: rgba(0,0,0,.5); color: #fff; font-weight: bold; }
+tr.cad-day td { padding: 2px 3px; }
+td.dtype { width: 32px; background-position: 0 0; background-repeat: no-repeat; }
+td.dtype-1 { background-image: url('http://dieverdammten.net/ovaloffice/css/img/dc1.gif'); }
+td.dtype-2 { background-image: url('http://dieverdammten.net/ovaloffice/css/img/dc2.gif'); }
+td.dtype-3 { background-image: url('http://dieverdammten.net/ovaloffice/css/img/dc3.gif'); }
+td.dtype-4 { background-image: url('http://dieverdammten.net/ovaloffice/css/img/dc4.gif'); }
+td.dtype-5 { background-image: url('http://dieverdammten.net/ovaloffice/css/img/dc5.gif'); }
+td.dtype-6 { background-image: url('http://dieverdammten.net/ovaloffice/css/img/dc6.gif'); }
+td.dtype-7 { background-image: url('http://dieverdammten.net/ovaloffice/css/img/dc7.gif'); }
+td.dtype-8 { background-image: url('http://dieverdammten.net/ovaloffice/css/img/dc8.gif'); }
+td.dtype-9 { background-image: url('http://dieverdammten.net/ovaloffice/css/img/dc9.gif'); }
+td.dtype-10 { background-image: url('http://dieverdammten.net/ovaloffice/css/img/dc10.gif'); }
+td.dtype-11 { background-image: url('http://dieverdammten.net/ovaloffice/css/img/dc11.gif'); }
+td.dtype-12 { background-image: url('http://dieverdammten.net/ovaloffice/css/img/dc12.gif'); }
+td.dtype-13 { background-image: url('http://dieverdammten.net/ovaloffice/css/img/dc13.gif'); }
+td.dtype-14 { background-image: url('http://dieverdammten.net/ovaloffice/css/img/dc14.gif'); }
+td.dtype-0 { background-image: url('http://dieverdammten.net/ovaloffice/css/img/dc0.gif'); }
+
+.box-spread, .box-unspread { 
+  position: absolute;
+  left: -24px;
+}
+.spread-me, #map-wrapper { 
+  -moz-transition: all 0.5s ease; 
+  -o-transition: all 0.5s ease; 
+  -webkit-transition: all 0.5s ease; 
+  transition: all 0.5s ease;
+}
+.spread-out { width: 233px; position: absolute; top: 32px; }
+.spread-out.spread-no { display: none; }
+.spread-out.spread-1 { left: -950px; }
+.spread-out.spread-2 { left: -700px; }
+.spread-out.spread-3 { left: -450px; width: 183px; }
+.spread-out.spread-4 { left: -250px; }
+.spread-out.spread-5 { left: 0px; }
+.spread-out.spread-6 { left: 100px; display: none; }
+.spread-out.spread-7 { left: 70px; display: none; }
+.spread-out.spread-8 { left: 240px; display: none; }
+
+table.construction-table { border-collapse: collapse; }
+.mcon-entry { font-size: .75em; }
+.mcon-entry.mcon-lock { color: #666; }
+.mcon-entry.mcon-lock td:last-child {background-color: rgba(255,204,204,.5); }
+.mcon-entry.mcon-done td:last-child { background-color: rgba(204,255,204,.5); }
+.mcon-entry.mcon-active td:last-child { background-color: rgba(255,255,204,.5); }
+.mcon-entry td:last-child { text-align: center; }
+.mcon-entry .con-icon { white-space: nowrap; background: #7D6E5F; }
+.mcon-entry .con-icon + td { padding-left: 2px; }
+.odd td { background: rgba(255,255,255,.25); }
+.even td { background: rgba(231,231,255,.25); }
+td.item { font-weight: bold; }
+.construction-update td { text-align: right; font-size: .75em; }
+
+#town-info p.desc a { 
+	display: inline-block;
+	margin: 0 35px 6px; 
+	font-size: 1.25em;
+}
