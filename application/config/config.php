@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://dieverdammten.net/fatamorgana/';
+$config['base_url']	= 'http://fm.dvart.de/';
 
 /*
 |--------------------------------------------------------------------------

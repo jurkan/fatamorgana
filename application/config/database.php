@@ -41,11 +41,11 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'db.dieverdammten.net';
-$db['default']['username'] = 'db_user';
-$db['default']['password'] = 'db_pass';
-$db['default']['database'] = 'fatamorgana';
-$db['default']['dbdriver'] = 'mysqli'; // set to postgre
+$db['default']['hostname'] = '127.0.0.1';
+$db['default']['username'] = '';
+$db['default']['password'] = '';
+$db['default']['database'] = '';
+$db['default']['dbdriver'] = 'postgre'; // set to postgre
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
 $db['default']['db_debug'] = TRUE;
@@ -55,7 +55,7 @@ $db['default']['char_set'] = 'utf8';
 $db['default']['dbcollat'] = 'utf8_general_ci';
 $db['default']['swap_pre'] = '';
 $db['default']['autoinit'] = TRUE;
-$db['default']['stricton'] = TRUE;
+$db['default']['stricton'] = FALSE;
 
 /* End of file database.php */
 /* Location: ./application/config/database.php */

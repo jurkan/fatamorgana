@@ -79,13 +79,15 @@ class System_model extends CI_Model {
 		return false;
 	}
 	public function saveTownData($tid,$day,$uid,$data) {
-		$sql = "INSERT INTO towndata VALUES (?,?,?,?,?) ON DUPLICATE KEY UPDATE data = ?, timestamp = ?"; 
-		$q = $this->db->query($sql, array($tid,$day,$uid,$data,time(),$data,time()));
+		#$sql = "INSERT INTO towndata VALUES (?,?,?,?,?) ON DUPLICATE KEY UPDATE data = ?, timestamp = ?"; 
+        $sql = "SELECT savetowndata(CAST(? AS INT),CAST(? AS SMALLINT),CAST(? AS INT),CAST(? AS TEXT),CAST(? AS INT))";
+		#$q = $this->db->query($sql, array($tid,$day,$uid,$data,time(),$data,time()));
+        $q = $this->db->query($sql, array($tid,$day,$uid,$data,time()));
 		return $q;
 	}
 	public function getTownDays($tid) {
 		$days = array();
-		$sql = "SELECT DISTINCT(day) FROM towndata WHERE tid = ? ORDER BY timestamp DESC LIMIT 45"; 
+		$sql = "SELECT DISTINCT day FROM towndata WHERE tid = ? ORDER BY day DESC LIMIT 45";
 		$q = $this->db->query($sql, array($tid));
 		if ($q->num_rows() > 0) {
 			foreach ($q->result() as $row) {

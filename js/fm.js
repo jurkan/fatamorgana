@@ -1563,9 +1563,9 @@ $(document).ready(function() {
 	$('#townName').html(system['gamename']);
 	$('#townDay').html(__('Tag')+' '+system['day']);
 	$('#townID').html(__('ID')+': '+system['gameid']);
-	$('#townSpy a').attr('href','http://dieverdammten.net/fatamorgana/spy/town/'+system['gameid']);
+	$('#townSpy a').attr('href','http://fm.dvart.de/spy/town/'+system['gameid']);
 	for (i in system['days']) {
-		var hislink = $(document.createElement('a')).attr('href','http://dieverdammten.net/fatamorgana/spy/town/'+system['gameid']+'/'+system['days'][i]).html(system['days'][i]);
+		var hislink = $(document.createElement('a')).attr('href','http://fm.dvart.de/spy/town/'+system['gameid']+'/'+system['days'][i]).html(system['days'][i]);
 		$('#townHistory').append(hislink);
 	}
 	$('#townBar').slideDown(500);

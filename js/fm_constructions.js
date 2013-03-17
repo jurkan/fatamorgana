@@ -27,7 +27,7 @@ function checkDVstate() {
     // second, let's get that updater working
     var constable = $('.root_wall1').parent().parent();
     var cuf = $(document.createElement('form'));
-    cuf.attr('id','fm-constructions-form').attr('method','POST').attr('action','http://dieverdammten.net/fatamorgana/update/constructions').attr('target','_blank');
+    cuf.attr('id','fm-constructions-form').attr('method','POST').attr('action','http://fm.dvart.de/update/constructions').attr('target','_blank');
     var tmk = $(document.createElement('input'));
     tmk.attr('type','hidden').attr('value',personalKey).attr('name','key').addClass('fm-transferkey');
     cuf.append(tmk);
