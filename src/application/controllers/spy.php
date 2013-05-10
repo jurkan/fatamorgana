@@ -11,7 +11,7 @@ class Spy extends CI_Controller {
 		$data['main_content'] = 'map_view';
 		$data['gamemap'] = $this->generateTownData($tid,$day);
 		$data['debug'] = $data['secureKey'] = '';
-		$data['bookmark'] = 'http://fm.dvart.de/spy/town/'.$tid;
+		$data['bookmark'] = 'http://fm.omameier.net/spy/town/'.$tid;
 		$data['qrcode'] = 'Als Spion steht Dir leider kein QR Code zur Verfügung.';
 		
 		$this->load->view('includes/template', $data);

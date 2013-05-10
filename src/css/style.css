@@ -1052,21 +1052,21 @@ table.cad-table { width: 100%; }
 tr.cad-day { background: rgba(0,0,0,.5); color: #fff; font-weight: bold; }
 tr.cad-day td { padding: 2px 3px; }
 td.dtype { width: 32px; background-position: 0 0; background-repeat: no-repeat; }
-td.dtype-1 { background-image: url('http://fm.dvart.de/css/img/dc1.gif'); }
-td.dtype-2 { background-image: url('http://fm.dvart.de/css/img/dc2.gif'); }
-td.dtype-3 { background-image: url('http://fm.dvart.de/css/img/dc3.gif'); }
-td.dtype-4 { background-image: url('http://fm.dvart.de/css/img/dc4.gif'); }
-td.dtype-5 { background-image: url('http://fm.dvart.de/css/img/dc5.gif'); }
-td.dtype-6 { background-image: url('http://fm.dvart.de/css/img/dc6.gif'); }
-td.dtype-7 { background-image: url('http://fm.dvart.de/css/img/dc7.gif'); }
-td.dtype-8 { background-image: url('http://fm.dvart.de/css/img/dc8.gif'); }
-td.dtype-9 { background-image: url('http://fm.dvart.de/css/img/dc9.gif'); }
-td.dtype-10 { background-image: url('http://fm.dvart.de/css/img/dc10.gif'); }
-td.dtype-11 { background-image: url('http://fm.dvart.de/css/img/dc11.gif'); }
-td.dtype-12 { background-image: url('http://fm.dvart.de/css/img/dc12.gif'); }
-td.dtype-13 { background-image: url('http://fm.dvart.de/css/img/dc13.gif'); }
-td.dtype-14 { background-image: url('http://fm.dvart.de/css/img/dc14.gif'); }
-td.dtype-0 { background-image: url('http://fm.dvart.de/css/img/dc0.gif'); }
+td.dtype-1 { background-image: url('http://fm.omameier.net/css/img/dc1.gif'); }
+td.dtype-2 { background-image: url('http://fm.omameier.net/css/img/dc2.gif'); }
+td.dtype-3 { background-image: url('http://fm.omameier.net/css/img/dc3.gif'); }
+td.dtype-4 { background-image: url('http://fm.omameier.net/css/img/dc4.gif'); }
+td.dtype-5 { background-image: url('http://fm.omameier.net/css/img/dc5.gif'); }
+td.dtype-6 { background-image: url('http://fm.omameier.net/css/img/dc6.gif'); }
+td.dtype-7 { background-image: url('http://fm.omameier.net/css/img/dc7.gif'); }
+td.dtype-8 { background-image: url('http://fm.omameier.net/css/img/dc8.gif'); }
+td.dtype-9 { background-image: url('http://fm.omameier.net/css/img/dc9.gif'); }
+td.dtype-10 { background-image: url('http://fm.omameier.net/css/img/dc10.gif'); }
+td.dtype-11 { background-image: url('http://fm.omameier.net/css/img/dc11.gif'); }
+td.dtype-12 { background-image: url('http://fm.omameier.net/css/img/dc12.gif'); }
+td.dtype-13 { background-image: url('http://fm.omameier.net/css/img/dc13.gif'); }
+td.dtype-14 { background-image: url('http://fm.omameier.net/css/img/dc14.gif'); }
+td.dtype-0 { background-image: url('http://fm.omameier.net/css/img/dc0.gif'); }
 
 .box-spread, .box-unspread { 
   position: absolute;

@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://fm.dvart.de/';
+$config['base_url']	= 'http://fm.omameier.net/';
 
 /*
 |--------------------------------------------------------------------------

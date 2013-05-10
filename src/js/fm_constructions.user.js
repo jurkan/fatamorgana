@@ -28,13 +28,13 @@
  * −−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−−----------
  *
  * @author  Paul Bruhn <countcount.cc@gmail.com>
- * @link    http://fm.dvart.de/js/fm-constructions.user.js
+ * @link    http://fm.omameier.net/js/fm-constructions.user.js
  * @license http://www.gnu.org/copyleft/gpl.html GNU General Public License
  * @charset UTF-8
 */
 // ==UserScript==
 // @name    Fata Morgana Constructions Updater
-// @namespace   http://fm.dvart.de/*
+// @namespace   http://fm.omameier.net/*
 // @description Construction Updater
 // @include   http://www.dieverdammten.de/*
 // @include   http://dieverdammten.de/*
@@ -47,7 +47,7 @@ function addJQuery(callback) {
   script.setAttribute("src", "//code.jquery.com/jquery-latest.min.js");
   script.addEventListener('load', function() {
     var script = document.createElement("script");
-    script.setAttribute("src", "//fm.dvart.de/js/fm_constructions.js?r="+Math.random());
+    script.setAttribute("src", "//fm.omameier.net/js/fm_constructions.js?r="+Math.random());
     document.body.appendChild(script);
   }, false);
   document.body.appendChild(script);

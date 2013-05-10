@@ -34,8 +34,8 @@ class Map extends CI_Controller {
 		$data['user_name'] = $this->session->userdata('user_name');
 		$data['gamemap'] = $this->generateData();
 		$data['debug'] = $this->System_model->getXMLsecure();
-		$data['qrcode'] = $this->generateQR('http://fm.dvart.de/login/skey/'.$this->key);
-		$data['bookmark'] = 'http://fm.dvart.de/login/skey/'.$this->key;		
+		$data['qrcode'] = $this->generateQR('http://fm.omameier.net/login/skey/'.$this->key);
+		$data['bookmark'] = 'http://fm.omameier.net/login/skey/'.$this->key;		
 		
 		$this->load->view('includes/template', $data);
 	}

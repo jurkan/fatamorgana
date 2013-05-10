@@ -347,12 +347,12 @@ function updateBox(x,y,rx,ry) {
 			
 			// update status
 			if ( !(rx == 0 && ry == 0) ) {
-        var monat = new Array(__("Januar"), __("Februar"), __("März"), __("April"), __("Mai", "Juni"), __("Juli"), __("August"), __("September"), __("Oktober"), __("November"), __("Dezember"));
+        var monat = new Array(__("Januar"), __("Februar"), __("März"), __("April"), __("Mai"),__("Juni"), __("Juli"), __("August"), __("September"), __("Oktober"), __("November"), __("Dezember"));
         var updText = __('Letzte Aktualisierung')+' ';
         if ( zone.updatedOn != undefined ) {
           var date = new Date(zone.updatedOn * 1000);
           
-          updText += __('am')+' ' + date.getDate() + '. ' + monat[date.getMonth() - 1] + ' ' + date.getFullYear() + ', ' + date.getHours() + ':' + (date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes()) + ' '+__('Uhr')+' ';
+          updText += __('am')+' ' + date.getDate() + '. ' + monat[date.getMonth()] + ' ' + date.getFullYear() + ', ' + date.getHours() + ':' + (date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes()) + ' '+__('Uhr')+' ';
         }
         if ( zone.updatedBy != undefined ) {
           updText += __('durch')+' ' + zone.updatedBy;
@@ -393,7 +393,7 @@ function updateBox(x,y,rx,ry) {
 			if ( upo != 0 && upb != 0 ) {
 				var updText = __('Letzte Aktualisierung')+' ';
 				var date = new Date(upo * 1000);
-				updText += __('am')+' ' + date.getDate() + '. ' + monat[date.getMonth() - 1] + ' ' + date.getFullYear() + ', ' + date.getHours() + ':' + (date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes()) + ' '+__('Uhr')+' ';
+				updText += __('am')+' ' + date.getDate() + '. ' + monat[date.getMonth()] + ' ' + date.getFullYear() + ', ' + date.getHours() + ':' + (date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes()) + ' '+__('Uhr')+' ';
 				updText += __('durch')+' ' + upb;
 				infoBox.append('<p class="zone-lastupdate">'+updText+'</p>');
 			}
@@ -1563,9 +1563,9 @@ $(document).ready(function() {
 	$('#townName').html(system['gamename']);
 	$('#townDay').html(__('Tag')+' '+system['day']);
 	$('#townID').html(__('ID')+': '+system['gameid']);
-	$('#townSpy a').attr('href','http://fm.dvart.de/spy/town/'+system['gameid']);
+	$('#townSpy a').attr('href','http://fm.omameier.net/spy/town/'+system['gameid']);
 	for (i in system['days']) {
-		var hislink = $(document.createElement('a')).attr('href','http://fm.dvart.de/spy/town/'+system['gameid']+'/'+system['days'][i]).html(system['days'][i]);
+		var hislink = $(document.createElement('a')).attr('href','http://fm.omameier.net/spy/town/'+system['gameid']+'/'+system['days'][i]).html(system['days'][i]);
 		$('#townHistory').append(hislink);
 	}
 	$('#townBar').slideDown(500);
