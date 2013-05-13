@@ -174,7 +174,7 @@ function updateBox(x,y,rx,ry) {
         if (!isExplorable(zone.building.type) && zone.building.type != -1) {
           if ( zone.building.dried != undefined && zone.building.dried == 1 ) {
             if ( data.spy == undefined ) {
-              infoBox.append('<p class="zone-building"><strong>'+ zone.building.name +'</strong><br/><span class="minus">'+__('Gebäude ist leer.')+'</span> <a class="interactive plus ajaxlink" href="/fatamorgana/update/building/regenerate" id="BUILDING-REGENERATE" ocx="'+x+'" ocy="'+y+'">'+__('regenerieren')+'</a></p>');
+              infoBox.append('<p class="zone-building"><strong>'+ zone.building.name +'</strong><br/><span class="minus">'+__('Gebäude ist leer.')+'</span> <a class="interactive plus ajaxlink" href="/update/building/regenerate" id="BUILDING-REGENERATE" ocx="'+x+'" ocy="'+y+'">'+__('regenerieren')+'</a></p>');
             }
             else {
               infoBox.append('<p class="zone-building"><strong>'+ zone.building.name +'</strong><br/><span class="minus">'+__('Gebäude ist leer.')+'</span></p>');
@@ -182,7 +182,7 @@ function updateBox(x,y,rx,ry) {
           }
           else {
             if ( data.spy == undefined ) {
-              infoBox.append('<p class="zone-building"><strong>'+ zone.building.name +'</strong><br/><span class="plus">'+__('Gebäude ist durchsuchbar.')+'</span> <a class="interactive minus ajaxlink" href="/fatamorgana/update/building/deplete" id="BUILDING-DEPLETE" ocx="'+x+'" ocy="'+y+'">'+__('leeren')+'</a></p>');
+              infoBox.append('<p class="zone-building"><strong>'+ zone.building.name +'</strong><br/><span class="plus">'+__('Gebäude ist durchsuchbar.')+'</span> <a class="interactive minus ajaxlink" href="/update/building/deplete" id="BUILDING-DEPLETE" ocx="'+x+'" ocy="'+y+'">'+__('leeren')+'</a></p>');
             }
             else {
               infoBox.append('<p class="zone-building"><strong>'+ zone.building.name +'</strong><br/><span class="plus">'+__('Gebäude ist durchsuchbar.')+'</span></p>');
@@ -190,7 +190,7 @@ function updateBox(x,y,rx,ry) {
           }
           if ( zone.building.blueprint != undefined && zone.building.blueprint == 1 ) {
             if ( data.spy == undefined ) {
-              infoBox.append('<p class="zone-building"><span class="minus">'+__('Blaupause wurde gefunden.')+'</span> <a class="interactive plus ajaxlink" href="/fatamorgana/update/blueprint/available" id="BLUEPRINT-AVAILABLE" ocx="'+x+'" ocy="'+y+'">'+__('ist noch erhältlich')+'</a></p>');
+              infoBox.append('<p class="zone-building"><span class="minus">'+__('Blaupause wurde gefunden.')+'</span> <a class="interactive plus ajaxlink" href="/update/blueprint/available" id="BLUEPRINT-AVAILABLE" ocx="'+x+'" ocy="'+y+'">'+__('ist noch erhältlich')+'</a></p>');
             }
             else {
               infoBox.append('<p class="zone-building"><span class="minus">'+__('Blaupause wurde gefunden.')+'</span></p>');
@@ -198,7 +198,7 @@ function updateBox(x,y,rx,ry) {
           }
           else {
             if ( data.spy == undefined ) {
-              infoBox.append('<p class="zone-building"><span class="plus">'+__('Blaupause ist noch erhältlich.')+'</span> <a class="interactive minus ajaxlink" href="/fatamorgana/update/blueprint/found" id="BLUEPRINT-FOUND" ocx="'+x+'" ocy="'+y+'">'+__('bereits gefunden')+'</a></p>');
+              infoBox.append('<p class="zone-building"><span class="plus">'+__('Blaupause ist noch erhältlich.')+'</span> <a class="interactive minus ajaxlink" href="/update/blueprint/found" id="BLUEPRINT-FOUND" ocx="'+x+'" ocy="'+y+'">'+__('bereits gefunden')+'</a></p>');
             }
             else {
               infoBox.append('<p class="zone-building"><span class="plus">'+__('Blaupause ist noch erhältlich.')+'</span></p>');
@@ -223,7 +223,7 @@ function updateBox(x,y,rx,ry) {
 			// regeneration
 			if ( zone.dried != undefined && zone.dried == 1 ) {
 				if ( data.spy == undefined ) {
-					infoBox.append('<p class="zone-status zone-status-empty"><img src="'+data.system.icon+'tag_5.gif" /> <span class="minus">'+__('Zone ist leer.')+'</span> <a class="interactive plus ajaxlink" href="/fatamorgana/update/zone/regenerate" id="ZONE-REGENERATE" ocx="'+x+'" ocy="'+y+'">'+__('regenerieren')+'</a></p>');
+					infoBox.append('<p class="zone-status zone-status-empty"><img src="'+data.system.icon+'tag_5.gif" /> <span class="minus">'+__('Zone ist leer.')+'</span> <a class="interactive plus ajaxlink" href="/update/zone/regenerate" id="ZONE-REGENERATE" ocx="'+x+'" ocy="'+y+'">'+__('regenerieren')+'</a></p>');
 				}
 				else {
 					infoBox.append('<p class="zone-status zone-status-empty"><img src="'+data.system.icon+'tag_5.gif" /> <span class="minus">'+__('Zone ist leer.')+'</span></p>');
@@ -231,7 +231,7 @@ function updateBox(x,y,rx,ry) {
 			}
 			else if ( !(rx == 0 && ry == 0) ) {
 				if ( data.spy == undefined ) {
-					infoBox.append('<p class="zone-status zone-status-full"><img src="'+data.system.icon+'small_gather.gif" /> <span class="plus">'+__('Zone ist regeneriert.')+'</span> <a class="interactive minus ajaxlink" href="/fatamorgana/update/zone/deplete" id="ZONE-DEPLETE" ocx="'+x+'" ocy="'+y+'">'+__('leeren')+'</a></p>');
+					infoBox.append('<p class="zone-status zone-status-full"><img src="'+data.system.icon+'small_gather.gif" /> <span class="plus">'+__('Zone ist regeneriert.')+'</span> <a class="interactive minus ajaxlink" href="/update/zone/deplete" id="ZONE-DEPLETE" ocx="'+x+'" ocy="'+y+'">'+__('leeren')+'</a></p>');
 				}
 				else {
 					infoBox.append('<p class="zone-status zone-status-full"><img src="'+data.system.icon+'small_gather.gif" /> <span class="plus">'+__('Zone ist regeneriert.')+'</span></p>');
@@ -255,7 +255,7 @@ function updateBox(x,y,rx,ry) {
 					}
 				}
 				if ( data.spy == undefined ) {
-					infoBox.append('<p class="zone-zombies"><span class="hideme zombie-count-change plus">◄&nbsp;</span><span id="zombie-count-display">'+(zone.z != undefined ? parseInt(zone.z) + diff : diff)+'</span><span class="hideme zombie-count-change minus">&nbsp;►</span> '+__('Zombie')+(zone.z && zone.z == 1 ? '' : 's')+' <a class="toggle-zombie-update interactive" href="/fatamorgana/update/zombies">'+__('aktualisieren')+'</a><a class="hideme interactive ajaxlink" href="/fatamorgana/update/zombies" id="UPDATE-ZOMBIES" ocx="'+x+'" ocy="'+y+'">'+__('speichern')+'</a></p>');
+					infoBox.append('<p class="zone-zombies"><span class="hideme zombie-count-change plus">◄&nbsp;</span><span id="zombie-count-display">'+(zone.z != undefined ? parseInt(zone.z) + diff : diff)+'</span><span class="hideme zombie-count-change minus">&nbsp;►</span> '+__('Zombie')+(zone.z && zone.z == 1 ? '' : 's')+' <a class="toggle-zombie-update interactive" href="/update/zombies">'+__('aktualisieren')+'</a><a class="hideme interactive ajaxlink" href="/update/zombies" id="UPDATE-ZOMBIES" ocx="'+x+'" ocy="'+y+'">'+__('speichern')+'</a></p>');
 					if ( days > 0 && zone.z != undefined ) {
 						if (days == 1 && zone.z == 1) {
 							infoBox.append('<p class="zone-zombies-scout"><em>'+__('Vor 1 Tag war es ein Zombie.')+'</em></p>');
@@ -287,7 +287,7 @@ function updateBox(x,y,rx,ry) {
 			
 			if ( data.system.chaos == true ) {
 				if ( data.spy == undefined ) {
-					infoBox.append('<p class="zone-chaos-citizen"><img src="'+data.system.icon+'small_arma.gif" /><img src="'+data.system.icon+'small_human.gif" /> <span class="minus">'+__('CHAOS')+':</span> <a class="interactive plus ajaxlink" href="/fatamorgana/update/citizen" id="CITIZEN-LOCATION" ocx="'+x+'" ocy="'+y+'">'+__('Ich bin HIER!')+'</a></p>');
+					infoBox.append('<p class="zone-chaos-citizen"><img src="'+data.system.icon+'small_arma.gif" /><img src="'+data.system.icon+'small_human.gif" /> <span class="minus">'+__('CHAOS')+':</span> <a class="interactive plus ajaxlink" href="/update/citizen" id="CITIZEN-LOCATION" ocx="'+x+'" ocy="'+y+'">'+__('Ich bin HIER!')+'</a></p>');
 				}
 			}
 			
@@ -309,7 +309,7 @@ function updateBox(x,y,rx,ry) {
 			if ( !(rx == 0 && ry == 0) ) {
         if ( zone['lostsoul'] == undefined || zone['lostsoul'] == 0 ) {
           if ( data.spy == undefined ) {
-            infoBox.append('<p class="zone-soul zone-soul-0">'+__('Keine verirrte Seele')+' <a class="interactive plus ajaxlink" href="/fatamorgana/update/zone/addsoul" id="ZONE-ADDSOUL" ocx="'+x+'" ocy="'+y+'">'+__('hinzufügen')+'</a></p>');
+            infoBox.append('<p class="zone-soul zone-soul-0">'+__('Keine verirrte Seele')+' <a class="interactive plus ajaxlink" href="/update/zone/addsoul" id="ZONE-ADDSOUL" ocx="'+x+'" ocy="'+y+'">'+__('hinzufügen')+'</a></p>');
           }
           else {
             infoBox.append('<p class="zone-soul zone-soul-0">'+__('Keine verirrte Seele')+'</p>');
@@ -317,7 +317,7 @@ function updateBox(x,y,rx,ry) {
         }
         else {
           if ( data.spy == undefined ) {
-            infoBox.append('<p class="zone-soul zone-soul-1"><img src="'+data.system.icon+'tag_12.gif" /> <span class="plus">'+__('Hier spukt es.')+'</span> <a class="interactive minus ajaxlink" href="/fatamorgana/update/zone/delsoul" id="ZONE-DELSOUL" ocx="'+x+'" ocy="'+y+'">'+__('Seele entfernen')+'</a></p>');
+            infoBox.append('<p class="zone-soul zone-soul-1"><img src="'+data.system.icon+'tag_12.gif" /> <span class="plus">'+__('Hier spukt es.')+'</span> <a class="interactive minus ajaxlink" href="/update/zone/delsoul" id="ZONE-DELSOUL" ocx="'+x+'" ocy="'+y+'">'+__('Seele entfernen')+'</a></p>');
           }
           else {
             infoBox.append('<p class="zone-soul zone-soul-1"><img src="'+data.system.icon+'tag_12.gif" /> <span class="plus">'+__('Hier spukt es..')+'</span></p>');
@@ -328,7 +328,7 @@ function updateBox(x,y,rx,ry) {
 			// items
 			if ( !(rx == 0 && ry == 0) ) {
         if ( data.spy == undefined ) {
-          infoBox.append('<p class="zone-items-header"><span>'+__('Gegenstände')+'</span> <a class="toggle-item-update interactive" href="/fatamorgana/update/items" id="ZONE-ITEMS" ocx="'+x+'" ocy="'+y+'">'+__('aktualisieren')+'</a></p>');
+          infoBox.append('<p class="zone-items-header"><span>'+__('Gegenstände')+'</span> <a class="toggle-item-update interactive" href="/update/items" id="ZONE-ITEMS" ocx="'+x+'" ocy="'+y+'">'+__('aktualisieren')+'</a></p>');
         }
         else {
           infoBox.append('<p class="zone-items-header"><span>'+__('Gegenstände')+'</span></p>');
@@ -341,7 +341,7 @@ function updateBox(x,y,rx,ry) {
           }
         }
         if ( data.spy == undefined ) {
-          infoBox.append('<p class="zone-items-footer hideme"><a class="close-item-selector minus interactive" href="close">'+__('schließen')+'</a>&nbsp;&nbsp;&nbsp;<a class="ajaxsave plus interactive" href="/fatamorgana/update/items" id="ZONE-ITEMS" ocx="'+x+'" ocy="'+y+'">'+__('speichern')+'</a></p>');
+          infoBox.append('<p class="zone-items-footer hideme"><a class="close-item-selector minus interactive" href="close">'+__('schließen')+'</a>&nbsp;&nbsp;&nbsp;<a class="ajaxsave plus interactive" href="/update/items" id="ZONE-ITEMS" ocx="'+x+'" ocy="'+y+'">'+__('speichern')+'</a></p>');
         }
       }
 			
@@ -376,17 +376,17 @@ function updateBox(x,y,rx,ry) {
 				var upo = 0;
 				var upb = 0;
 			}
-			infoBox.append('<p class="zone-zombies"><span class="hideme zombie-count-change plus">◄&nbsp;</span><span id="zombie-count-display">'+(zom ? zom : 0)+'</span><span class="hideme zombie-count-change minus">&nbsp;►</span> '+__('Zombies')+' <a class="toggle-zombie-update interactive" href="/fatamorgana/update/scoutzombies">'+__('aktualisieren')+'</a><a class="hideme interactive ajaxlink" href="/fatamorgana/update/scoutzombies" id="UPDATE-SCOUTZOMBIES" ocx="'+x+'" ocy="'+y+'">'+__('speichern')+'</a></p>');
+			infoBox.append('<p class="zone-zombies"><span class="hideme zombie-count-change plus">◄&nbsp;</span><span id="zombie-count-display">'+(zom ? zom : 0)+'</span><span class="hideme zombie-count-change minus">&nbsp;►</span> '+__('Zombies')+' <a class="toggle-zombie-update interactive" href="/update/scoutzombies">'+__('aktualisieren')+'</a><a class="hideme interactive ajaxlink" href="/update/scoutzombies" id="UPDATE-SCOUTZOMBIES" ocx="'+x+'" ocy="'+y+'">'+__('speichern')+'</a></p>');
 			infoBox.append('<div class="hideme"><input type="hidden" value="'+(zom ? zom : 0)+'" id="zombie-count-input" /></div>');
 			// possible building?
 			if ( pbl == 0 ) {
 				if ( data.spy == undefined ) {
-					infoBox.append('<p class="zone-status zone-status-empty"><img src="'+data.system.icon+'tag_5.gif" /> <span class="minus">'+__('Gebäude unwahrscheinlich')+'</span> <a class="interactive plus ajaxlink" href="/fatamorgana/update/zone/buildingprobable" id="BUILDING-PROBABLE" ocx="'+x+'" ocy="'+y+'">'+__('vermutlich doch')+'</a></p>');
+					infoBox.append('<p class="zone-status zone-status-empty"><img src="'+data.system.icon+'tag_5.gif" /> <span class="minus">'+__('Gebäude unwahrscheinlich')+'</span> <a class="interactive plus ajaxlink" href="/update/zone/buildingprobable" id="BUILDING-PROBABLE" ocx="'+x+'" ocy="'+y+'">'+__('vermutlich doch')+'</a></p>');
 				}
 			}
 			else {
 				if ( data.spy == undefined ) {
-					infoBox.append('<p class="zone-status zone-status-full"><img src="'+data.system.icon+'small_gather.gif" /> <span class="plus">'+__('vermutlich ein Gebäude')+'</span> <a class="interactive minus ajaxlink" href="/fatamorgana/update/zone/buildingnotprobable" id="BUILDING-NOTPROBABLE" ocx="'+x+'" ocy="'+y+'">'+__('eher nicht')+'</a></p>');
+					infoBox.append('<p class="zone-status zone-status-full"><img src="'+data.system.icon+'small_gather.gif" /> <span class="plus">'+__('vermutlich ein Gebäude')+'</span> <a class="interactive minus ajaxlink" href="/update/zone/buildingnotprobable" id="BUILDING-NOTPROBABLE" ocx="'+x+'" ocy="'+y+'">'+__('eher nicht')+'</a></p>');
 				}
 			}
 			// update status
@@ -778,7 +778,7 @@ function ajaxUpdate(ec,z) {
 	protectBox(true);
 	$.ajax({
 		type: "POST",
-		url: "/fatamorgana/map/update",
+		url: "/map/update",
 		data: "key="+token+"&action="+ocAction+"&x="+ocX+"&y="+ocY+"&z="+z,
 		success: function(msg) {
 			$('#dynascript').append(msg);
@@ -802,7 +802,7 @@ function ajaxRuinUpdate(ocAction,z) {
 		/*protectRuinBox(true);*/
 		$.ajax({
 			type: "POST",
-			url: "/fatamorgana/map/update",
+			url: "/map/update",
 			data: "key="+token+"&action="+ocAction+"&x="+ocX+"&y="+ocY+"&z="+ocAD,
 			success: function(msg) {
 				$('#dynascript').append(msg);
@@ -1073,7 +1073,7 @@ function saveZoneItems(x,y,serial) {
 	protectBox(true);
 	$.ajax({
 		type: "POST",
-		url: "/fatamorgana/map/update",
+		url: "/map/update",
 		data: "key="+secureKey+"&action=ZONE-ITEMS&x="+(parseInt(x) + parseInt(data.tx))+"&y="+(parseInt(data.ty) - parseInt(y))+"&z="+serial,
 		success: function(msg) {
 			//alert(msg);
@@ -1086,7 +1086,7 @@ function saveBuildingGuess(x,y,bID) {
 	protectBox(true);
 	$.ajax({
 		type: "POST",
-		url: "/fatamorgana/map/update",
+		url: "/map/update",
 		data: "key="+secureKey+"&action=BUILDING-GUESS&x="+(parseInt(x) + parseInt(data.tx))+"&y="+(parseInt(data.ty) - parseInt(y))+"&z="+bID,
 		success: function(msg) {
 			//alert(msg);
@@ -1116,7 +1116,7 @@ function generateStormList() {
 	var stormBox = $('#storms');
 	var stormList = $(document.createElement('ul')).addClass('storm-list');
 	var stormForm = $(document.createElement('div')).addClass('storm-form');
-	stormForm.append('<select id="storm-today" name="storm-today"><option value="0">'+__('keine Beobachtung')+'</option></select>').append('<a class="interactive ajaxupdate" href="/fatamorgana/update/storm" id="UPDATE-STORM">'+__('speichern')+'</a>');
+	stormForm.append('<select id="storm-today" name="storm-today"><option value="0">'+__('keine Beobachtung')+'</option></select>').append('<a class="interactive ajaxupdate" href="/update/storm" id="UPDATE-STORM">'+__('speichern')+'</a>');
 	stormBox.html('').append(stormForm).append(stormList);
 	for ( i = 1; i < 9; i++ ) {
 		$('#storm-today').append('<option value="'+i+'">'+data.stormnames[i-1]+'</option>');
@@ -1251,7 +1251,7 @@ function generateRuinList() {
 		var gdl = awr[gdn];
 		for ( i in gdl ) {
 			var b = gdl[i];
-			var awrRow = $(document.createElement('tr')).addClass('awr-entry').html('<td class="pos-stat '+(b.dried != undefined && b.dried == 1 ? 'ruin-empty' : 'ruin-regen')+'"><abbr onmouseover="highlightSpecialZone('+b.x+','+b.y+');" onmouseout="downdarkSpecialZone('+b.x+','+b.y+');" onclick="$(\'#x'+(b.x)+'y'+(b.y)+'\').click();" class="ruin-coords" title="'+b.ap+'AP ('+b.km+'km)">['+b.x+'|'+b.y+']</abbr></td><td>'+'<img src="/fatamorgana/css/img/'+(b.explorable == true ? 'explore' : (b.blueprint != undefined && b.blueprint == 1 ? 'no-bp' : 'bp'))+'.png">'+'</td><td>'+(b.name != __('Ein nicht freigeschaufeltes Gebäude.') ? b.name : '<em style="color:#c00;"> '+b.dig+' '+__('Haufen')+' <img style="vertical-align:text-bottom;height:14px;" src="http://www.dieverdammten.de/gfx/forum/smiley/h_dig.gif"></em>' )+'</td>');
+			var awrRow = $(document.createElement('tr')).addClass('awr-entry').html('<td class="pos-stat '+(b.dried != undefined && b.dried == 1 ? 'ruin-empty' : 'ruin-regen')+'"><abbr onmouseover="highlightSpecialZone('+b.x+','+b.y+');" onmouseout="downdarkSpecialZone('+b.x+','+b.y+');" onclick="$(\'#x'+(b.x)+'y'+(b.y)+'\').click();" class="ruin-coords" title="'+b.ap+'AP ('+b.km+'km)">['+b.x+'|'+b.y+']</abbr></td><td>'+'<img src="/css/img/'+(b.explorable == true ? 'explore' : (b.blueprint != undefined && b.blueprint == 1 ? 'no-bp' : 'bp'))+'.png">'+'</td><td>'+(b.name != __('Ein nicht freigeschaufeltes Gebäude.') ? b.name : '<em style="color:#c00;"> '+b.dig+' '+__('Haufen')+' <img style="vertical-align:text-bottom;height:14px;" src="http://www.dieverdammten.de/gfx/forum/smiley/h_dig.gif"></em>' )+'</td>');
 			awrTable.append(awrRow);
 		}
 	}
@@ -1541,7 +1541,7 @@ function saveRoute() {
 	var token = secureKey;
 	$.ajax({
 		type: "POST",
-		url: "/fatamorgana/map/updateRoutes",
+		url: "/map/updateRoutes",
 		data: "key="+token+"&action=ADDROUTE&rname="+$('input[name="routeSave-name"]').val().trim()+"&route="+routeString,
 		success: function(msg) {
 			$('#dynascript').append(msg);
